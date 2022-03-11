@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B470EBC8-213A-4892-B08E-BE8102EAF7B7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ponto_Contar</RootNamespace>
+    <AssemblyName>Ponto_Contar</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Repository\ExportarParaExcelRepository.cs" />
+    <Compile Include="Classes\ViewModel\ExportarParaExcelViewModel.cs" />
+    <Compile Include="Formularios\LancamentoPontoManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\LancamentoPontoManual.Designer.cs">
+      <DependentUpon>LancamentoPontoManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AjustarLancamentoPonto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AjustarLancamentoPonto.Designer.cs">
+      <DependentUpon>AjustarLancamentoPonto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ExportarParaExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ExportarParaExcel.Designer.cs">
+      <DependentUpon>ExportarParaExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Senha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Senha.Designer.cs">
+      <DependentUpon>Senha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CadastrodeColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CadastrodeColaborador.Designer.cs">
+      <DependentUpon>CadastrodeColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Repository\PontoRepository.cs" />
+    <Compile Include="Classes\Repository\UsuarioRepository.cs" />
+    <Compile Include="Classes\ViewModel\PontoViewModel.cs" />
+    <Compile Include="Classes\ViewModel\UsuarioViewModel.cs" />
+    <Compile Include="Formularios\AlterarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AlterarSenha.Designer.cs">
+      <DependentUpon>AlterarSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\IncluirAlterarColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\IncluirAlterarColaborador.Designer.cs">
+      <DependentUpon>IncluirAlterarColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Ambiente.cs" />
+    <Compile Include="Formularios\CadastrodePonto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CadastrodePonto.Designer.cs">
+      <DependentUpon>CadastrodePonto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Relatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Relatorio.Designer.cs">
+      <DependentUpon>Relatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Ponto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Formularios\TesteConexao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TesteConexao.Designer.cs">
+      <DependentUpon>TesteConexao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Usuario.cs" />
+    <Compile Include="Classes\Util.cs" />
+    <EmbeddedResource Include="Formularios\LancamentoPontoManual.resx">
+      <DependentUpon>LancamentoPontoManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AjustarLancamentoPonto.resx">
+      <DependentUpon>AjustarLancamentoPonto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ExportarParaExcel.resx">
+      <DependentUpon>ExportarParaExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Senha.resx">
+      <DependentUpon>Senha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CadastrodeColaborador.resx">
+      <DependentUpon>CadastrodeColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AlterarSenha.resx">
+      <DependentUpon>AlterarSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\IncluirAlterarColaborador.resx">
+      <DependentUpon>IncluirAlterarColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CadastrodePonto.resx">
+      <DependentUpon>CadastrodePonto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Relatorio.resx">
+      <DependentUpon>Relatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Formularios\TesteConexao.resx">
+      <DependentUpon>TesteConexao.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <None Include="Resources\21893_Head_Think_Solucoes_190117 - Copia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
